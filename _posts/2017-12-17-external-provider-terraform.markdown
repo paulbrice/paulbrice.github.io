@@ -5,7 +5,7 @@ date: 2017-12-17 21:16:00 -07:00
 categories: Terraform Python
 ---
 
-Using an 'External Provider' in Terraform is pretty simple but there are specific requirements for the scripts processing the JSON query data. The documentation on hashicorp.io does specify state a bash shell example but nothing for Python. Below is an example for Python using the same premise but leveraging 'json' Python module to robustly transform the JSON data.
+Using an 'External Provider' in Terraform is pretty simple but there are specific requirements for the scripts processing the JSON query data. The documentation on hashicorp.com does show a bash shell example but nothing for Python. Below is an example for Python using the same premise but leveraging 'json' Python module to robustly transform the JSON data.
 
 [Terraform External Data Provider][external-link]
 
