@@ -86,7 +86,7 @@ external_result = {
 }
 ```
 
-The above example stores the JSON input from STDIN and then uses the Python 'json' module to translate from string to JSON in a robust way. The JSON object is apended with the new data and sent back to Terraform by 'stringyfying' it and writing to STDOUT. This can be used to perform any external processing as part of a Terraform module.
+The above example stores the input from STDIN and then uses the Python 'json' module to translate from string to JSON in a robust way. The JSON object is apended with the new data and sent back to Terraform by 'stringyfying' it and writing to STDOUT. This can be used to perform any external processing as part of a Terraform module.
 
 Hope it helps.
 
