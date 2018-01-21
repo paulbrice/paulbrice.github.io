@@ -4,15 +4,14 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I work as a Lead Cloud Engineer in the Financial sector.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+After 19 years in multiple technology Engineering roles,  I am the most excited than I have ever been to be working in the Cloud landscape. I am a somewhat recent transplant from the UK (12 years) and this is my blog. It is a living backup, a collection of thoughts and ideas.
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+(Albert Einstein)
+> Madness: Endlessly repeating the same process hoping for a different result.
 
+> If you cannot explain it simply, you don’t know it well enough.
 
-[jekyll-organization]: https://github.com/jekyll
+(Plato)
+> Wise men speak because they have something to say. Fools because they have to say something
