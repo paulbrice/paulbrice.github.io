@@ -16,7 +16,7 @@
 title: the Blog
 email: cloudboffin@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A blog for ideas and things i need to remember or want to share. Better than talking to my self and i ran out of post it notes...
+  A blog for ideas and things i need to remember or want to share. Better than talking to my self and i ran out of postit notes...
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://paulbrice.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: pauljbrice
