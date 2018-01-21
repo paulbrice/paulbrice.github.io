@@ -1,2 +1,0 @@
-# paulbrice.github.io
-Blog
