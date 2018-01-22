@@ -206,8 +206,8 @@ All information is provided on an AS-IS basis, with no warranties and confers no
 
 [1]: https://github.com/PowerShell/PowerShell/PowerShell/blob/master/docs/installation/macos.md
 [2]: https://www.PowerShellgallery.com/packages/AWSPowerShell.NetCore/3.3.221.0
-[3]: https://docs.aws.amazon.com/PowerShell/latest/reference/Index.html
+[3]: https://docs.aws.amazon.com/powershell/latest/reference/Index.html
 [4]: https://github.com/PowerShell/vscode-PowerShell
-[5]: https://docs.aws.amazon.com/PowerShell/latest/userguide/aws-pst-ug.pdf
-[6]: https://docs.aws.amazon.com/PowerShell/latest/reference/items/Get-EC2Image.html
-[7]: https://docs.aws.amazon.com/PowerShell/latest/reference/
+[5]: https://docs.aws.amazon.com/powershell/latest/userguide/aws-pst-ug.pdf
+[6]: https://docs.aws.amazon.com/powershell/latest/reference/items/Get-EC2Image.html
+[7]: https://docs.aws.amazon.com/powershell/latest/reference/
