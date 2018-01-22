@@ -204,7 +204,7 @@ Hope it helps.
 
 All information is provided on an AS-IS basis, with no warranties and confers no rights
 
-[1]: https://github.com/PowerShell/PowerShell/PowerShell/blob/master/docs/installation/macos.md
+[1]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md
 [2]: https://www.PowerShellgallery.com/packages/AWSPowerShell.NetCore/3.3.221.0
 [3]: https://docs.aws.amazon.com/powershell/latest/reference/Index.html
 [4]: https://github.com/PowerShell/vscode-PowerShell
