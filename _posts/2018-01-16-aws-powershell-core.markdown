@@ -192,7 +192,7 @@ Get-EC2Image -Owner amazon -Filter $properties -Region us-east-1 | Select name
 
 Here are some more useful links.
 
-- AWS PowerShell [user-guide] (external-link4]
+- AWS PowerShell [user-guide][5]
 - AWS PowerShell [cmdlet-reference][7]
 
 Hope it helps.
