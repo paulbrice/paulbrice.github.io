@@ -5,7 +5,7 @@ date: 2018-01-16 19:16:00 -07:00
 categories: PowerShell AWS OSX
 ---
 
-So after a year and a half, I decided to blow off the cobwebs and flex the PowerShell muscles again. Being a Windows Engineer for 'a few years' and a 'Monad' scripter before PowerShell was cool I felt like it was time to what I could do with PS and AWS.
+So after a year and a half, I decided to blow off the cobwebs and flex the PowerShell muscles again. Being a Windows Engineer for 'a few years' and writing scripts in Monad before it became PowerShell. I felt like it was time to see what PowerShell Core was like and play with AWS.
 
 So I used the AWS guide to install [PowerShell Core 6.0][1] for OSX
 
