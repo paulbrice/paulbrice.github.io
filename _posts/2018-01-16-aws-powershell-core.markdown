@@ -7,10 +7,13 @@ categories: PowerShell AWS OSX
 
 So after a year and a half, I decided to blow off the cobwebs and flex the PowerShell muscles again. Being a Windows Engineer for 'a few years' and writing scripts in Monad before it became PowerShell. I felt like it was time to see what PowerShell Core was like and play with AWS.
 
-So I used the AWS guide to install [PowerShell Core 6.0][1] for OSX
+So I used the AWS guide to install [PowerShell Core 6.0][0] for OSX
 
 {% highlight bash %}
-brew install pwsh
+brew tap caskroom/cask
+brew cask install powershell
+brew update
+brew cask reinstall powershell
 {% endhighlight %}
 
 Then install the [AWSPowerShell.NetCore][2] from PowerShell Gallery and they have module [documentation][3]. I am using VSCode as my IDE and you can get information on VSCode PowerShell plugin [here][4].
@@ -19,6 +22,8 @@ Then install the [AWSPowerShell.NetCore][2] from PowerShell Gallery and they hav
 pwsh
 Install-Module -Name AWSPowerShell.NetCore
 {% endhighlight %}
+
+Another usefull guide. [AWS PowerShell user-guide][1]
 
 Ok so now I am up and running with PSCore, whats next... lets checkout AWS and the available cmdlets.
 
@@ -199,8 +204,7 @@ Hope it helps.
 
 All information is provided on an AS-IS basis, with no warranties and confers no rights
 
-[0]: https://docs.aws.amazon.com/PowerShell/latest/userguide/pstools-getting-set-up-linux-mac.html
-[1]: https://github.com/PowerShell/PowerShell
+[1]: https://github.com/PowerShell/PowerShell/PowerShell/blob/master/docs/installation/macos.md
 [2]: https://www.PowerShellgallery.com/packages/AWSPowerShell.NetCore/3.3.221.0
 [3]: https://docs.aws.amazon.com/PowerShell/latest/reference/Index.html
 [4]: https://github.com/PowerShell/vscode-PowerShell
