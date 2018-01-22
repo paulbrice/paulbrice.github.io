@@ -1,18 +1,19 @@
 ---
 layout: post
-title: Using Powershell-Core with AWS
+title: Using PowerShell-Core with AWS
 date: 2018-01-16 19:16:00 -07:00
-categories: Powershell AWS OSX
+categories: PowerShell AWS OSX
 ---
-So after a year and a half, I decided to blow off the cobwebs and flex the Powershell muscles again. Being a Windows Engineer for 'a few years' and a 'Monad' scripter before Powershell was cool I felt like it was time to what I could do with PS and AWS.
 
-So I used the AWS guide to install [Powershell Core 6.0][external-link] for OSX
+So after a year and a half, I decided to blow off the cobwebs and flex the PowerShell muscles again. Being a Windows Engineer for 'a few years' and a 'Monad' scripter before PowerShell was cool I felt like it was time to what I could do with PS and AWS.
+
+So I used the AWS guide to install [PowerShell Core 6.0][1] for OSX
 
 {% highlight bash %}
 brew install pwsh
 {% endhighlight %}
 
-Then install the [AWSPowerShell.NetCore][external-link1] from Powershell Gallery and they have module [documentation][external-link2]. I am using VSCode as my IDE and you can get information on VSCode Powershell plugin [here][external-link3].
+Then install the [AWSPowerShell.NetCore][2] from PowerShell Gallery and they have module [documentation][3]. I am using VSCode as my IDE and you can get information on VSCode PowerShell plugin [here][4].
 
 {% highlight bash %}
 pwsh
@@ -26,11 +27,11 @@ Ok so now I am up and running with PSCore, whats next... lets checkout AWS and t
 3979
 {% endhighlight %}
 
->WOW 3979 commands for AWS.... lets look at available EC2 Images.
+WOW 3979 commands for AWS.... lets look at available EC2 Images.
 
 First we need to know what cmdlets are available to work with EC2 Images, we can use Get-Command and filters to find this. PowerShell cmdlet naming standard is based on a Verb/Noun structure which we can filter on using -Verb, -Noun or -Name arguments.
 
-{% highlight powershell %}
+{% highlight PowerShell %}
 Get-Command -Name *Image* -Module AWSPowerShell.NetCore
 
 CommandType     Name                                               Version    S
@@ -79,7 +80,7 @@ Using **Get-EC2Image** we can pull all the EC2 images available. But we want to 
 
 One of my favorite and invaluable cmdlets is **Get-Member**, this allows you to see properties and methods on your objects.
 
-{% highlight powershell %}
+{% highlight PowerShell %}
 Get-EC2Image -Region us-east-1 | Select -first 1 | Get-Member
 
   TypeName: Amazon.EC2.Model.Image
@@ -129,7 +130,7 @@ Using that information we can construct a PowerShell script, there are a couple 
 Both of these have their place but lets look at the performance when pulling large data sets from AWS.
 
 **-Filter{}**
-{% highlight powershell %}
+{% highlight PowerShell %}
 Measure-Command{Get-EC2Image -Region us-east-1 | Where-Object{$PSItem.Platform -eq "windows"} | Select-Object Name}
 
 Days              : 0
@@ -146,7 +147,7 @@ TotalMilliseconds : 80327.557
 {% endhighlight %}
 
 **Where-Object{}**
-{% highlight powershell %}
+{% highlight PowerShell %}
 $platform_values = New-Object 'collections.generic.list[string]'
 $platform_values.add("windows")
 $filter_platform = New-Object Amazon.EC2.Model.Filter -Property @{Name = "platform"; Values = $platform_values}
@@ -165,17 +166,17 @@ TotalSeconds      : 34.766561
 TotalMilliseconds : 34766.561
 {% endhighlight %}
 
-So for this case using the -Filter{} parameter is much faster that filtering the returned data with Where-Object.
+So for this case using the -Filter{} parameter is much faster than filtering the returned data with Where-Object.
 
-To perform filtering using the -Filter{} parameter you need to submit a hash for the specific attribute you want to filter on. If you want to filter on multiple attributes then you create multiple filter objects or hash tables for each filter and wrap them in an array separated by semi-colon. Check the specific cmdlets documentation for the available filters [here][external-link6].
+To perform filtering using the -Filter{} parameter you need to submit a hash for the specific attribute you want to filter on. If you want to filter on multiple attributes then you create multiple filter objects or hash tables for each filter and wrap them in an array separated by semi-colon. Check the specific cmdlets documentation for the available filters [here][7].
 
-Filters for **Get-EC2Image** [here][external-link5]
+Filters for **Get-EC2Image** [here][6]
 
 I want to filter on both platform, root-device-type and name.
 
 Final Script:
 
-{% highlight powershell %}
+{% highlight PowerShell %}
 $platform_values = New-Object 'collections.generic.list[string]'
 $rootdevicetype_values = New-Object 'collections.generic.list[string]'
 $name_values = New-Object 'collections.generic.list[string]'
@@ -192,16 +193,17 @@ Get-EC2Image -Owner amazon -Filter $properties -Region us-east-1 | Select name
 Here are some more useful links.
 
 - AWS PowerShell [user-guide] (external-link4]
-- AWS PowerShell [cmdlet-reference][external-link6]
+- AWS PowerShell [cmdlet-reference][7]
 
 Hope it helps.
 
 All information is provided on an AS-IS basis, with no warranties and confers no rights
-[external-link]: https://docs.aws.amazon.com/powershell/latest/userguide/pstools-getting-set-up-linux-mac.html
-[external-link0]: https://github.com/PowerShell/PowerShell
-[external-link1]: https://www.powershellgallery.com/packages/AWSPowerShell.NetCore/3.3.221.0
-[external-link2]: https://docs.aws.amazon.com/powershell/latest/reference/Index.html
-[external-link3]: https://github.com/PowerShell/vscode-powershell
-[external-link4]: https://docs.aws.amazon.com/powershell/latest/userguide/aws-pst-ug.pdf
-[external-link5]: https://docs.aws.amazon.com/powershell/latest/reference/items/Get-EC2Image.html
-[external-link6]: https://docs.aws.amazon.com/powershell/latest/reference/
+
+[0]: https://docs.aws.amazon.com/PowerShell/latest/userguide/pstools-getting-set-up-linux-mac.html
+[1]: https://github.com/PowerShell/PowerShell
+[2]: https://www.PowerShellgallery.com/packages/AWSPowerShell.NetCore/3.3.221.0
+[3]: https://docs.aws.amazon.com/PowerShell/latest/reference/Index.html
+[4]: https://github.com/PowerShell/vscode-PowerShell
+[5]: https://docs.aws.amazon.com/PowerShell/latest/userguide/aws-pst-ug.pdf
+[6]: https://docs.aws.amazon.com/PowerShell/latest/reference/items/Get-EC2Image.html
+[7]: https://docs.aws.amazon.com/PowerShell/latest/reference/
