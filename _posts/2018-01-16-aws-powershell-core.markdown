@@ -134,7 +134,7 @@ Using that information we can construct a PowerShell script, there are a couple 
 
 Both of these have their place but lets look at the performance when pulling large data sets from AWS.
 
-**-Filter{}**
+**Where-Object{} CMDlet**
 {% highlight PowerShell %}
 Measure-Command{Get-EC2Image -Region us-east-1 | Where-Object{$PSItem.Platform -eq "windows"} | Select-Object Name}
 
@@ -151,7 +151,7 @@ TotalSeconds      : 80.327557
 TotalMilliseconds : 80327.557
 {% endhighlight %}
 
-**Where-Object{}**
+**-Filter{} Property**
 {% highlight PowerShell %}
 $platform_values = New-Object 'collections.generic.list[string]'
 $platform_values.add("windows")
