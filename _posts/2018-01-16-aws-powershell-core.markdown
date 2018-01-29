@@ -134,7 +134,7 @@ Using that information we can construct a PowerShell script, there are a couple 
 
 Both of these have their place but lets look at the performance when pulling large data sets from AWS.
 
-**Where-Object{} CMDlet**
+**Where-Object{} Cmdlet**
 {% highlight PowerShell %}
 Measure-Command{Get-EC2Image -Region us-east-1 | Where-Object{$PSItem.Platform -eq "windows"} | Select-Object Name}
 
