@@ -4,7 +4,7 @@ title: AWSCLI using Federated Credentials
 date: 2018-02-06 19:55:00 -07:00
 categories: awscli golang python
 ---
-AWSCLI using Federated credentials?
+AWSCLI using Federated Credentials?
 
 A while back i found a blog post written by 'Quint Van Demen' on the AWS Security Blog. This solved a need to leverage federated credentials from our forms based IDP for AWS CLI access and enable us to remove all operational IAM users.
 
