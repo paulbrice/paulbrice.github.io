@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts - {{site.time | date: "%Y"}}</h1>
+  
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      {% capture currentDate %}{{ post.date | date: "%Y" }}{% endcapture %}
+      {% capture currentYear %}{{ site.time | date: "%Y" }}{% endcapture %}
+      {% if currentDate == currentYear %}
+      <li><a href="{{ post.url }}"><span>{{ post.date | date: "%B %-d, %Y" }}</span> - {{ post.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>
