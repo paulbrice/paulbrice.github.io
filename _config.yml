@@ -22,6 +22,9 @@ url: "http://paulbrice.com" # the base hostname & protocol for your site, e.g. h
 twitter_username: pauljbrice
 github_username:  paulbrice
 
+show_excerpts: true # set to true to show excerpts on the homepage
+post_limit: 5 # limits the number of posts on home page - default 0
+
 # Build settings
 markdown: kramdown
 theme: minima
